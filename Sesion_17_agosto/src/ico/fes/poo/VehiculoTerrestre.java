@@ -21,6 +21,12 @@ public class VehiculoTerrestre extends Vehiculo { //extends es para heredar los 
         this.kmPorHora = kmPorHora;
     }
 
+    public VehiculoTerrestre(int tipo, String kmPorHora, String descripcion, String fabricante, String material) {
+        super(descripcion, fabricante, material); //la palabra super hace referencia a la clase madre
+        this.tipo = tipo;
+        this.kmPorHora = kmPorHora;
+    }
+        
     public String getKmPorHora() {
         return kmPorHora;
     }
@@ -58,6 +64,11 @@ public class VehiculoTerrestre extends Vehiculo { //extends es para heredar los 
                 System.out.println("No reconocible");
         }
         return 100;
+    }
+    
+    @Override //sobre escritura 
+    public void usar(){
+        System.out.println("Utilizando el ferrocaril que viaja en vias ferreas de la marca " + this.getFabricante());
     }
 }
 
